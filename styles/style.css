@@ -17,4 +17,109 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  color: var(--accent-color);
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  font-variation-settings: 'wght' var(--wght);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-inline-size: 696px;
+  min-block-size: 364px;
+  margin: 102px 372px;
+  border: 2px solid var(--accent-color);
+}
+
+.header__title {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 65px;
+  text-transform: uppercase;
+  margin-block-start: 136px;
+  margin-block-end: 20px;
+}
+
+.header__text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 23px;
+  text-transform: uppercase;
+  margin-block-end: 25px;
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-content: center;
+  margin-inline-start: 18px;
+  margin-block-end: 25px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theme-menu__item {
+  position: relative;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.theme-menu__button:hover::after {
+  width: 100%;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+
+}
+
+.theme-menu__button:disabled::before{
+  position: absolute;
+  display: inline;
+  content: '▶';
+  animation: arrow-move 0.5s infinite alternate ease-in-out;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button:focus-visible {
+  outline: none;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  transform-origin: bottom;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+  transition: width 0.3s;
 }
