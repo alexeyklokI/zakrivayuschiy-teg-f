@@ -1,9 +1,17 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --background-color: #fff;
+    --watermark-shadow: #fff;
     --accent-color: #000;
     --font-family: "Press Start 2P", sans-serif;
     --second-family: "Inter", sans-serif;
-    --wght: 400;
+    --normal-weight-font: 400;
+    --bold-weight-font: 700;
     --background-image: url('../images/background-light.png');
+    --gradient-theme: 
+        repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(to bottom, #e7e7e7 0 2px, #1a1a1a 2px 4px),
+        linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+    --font-slint: 0;
+    
 }

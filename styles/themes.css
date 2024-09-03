@@ -7,22 +7,46 @@
 
 :root.theme-light {
     --background-color: #fff;
+    --watermark-shadow: #fff;
     --accent-color: #000;
     --font-family: "Press Start 2P", sans-serif;
     --second-family: "Inter", sans-serif;
+    --normal-weight-font: 400;
+    --bold-weight-font: 700;
+    --background-image: url('../images/background-light.png');
+    --gradient-theme: 
+        repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(to bottom, #e7e7e7 0 2px, #1a1a1a 2px 4px),
+        linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+    --font-slint: 0;
 }
 
 :root.theme-dark {
     --accent-color: #00cc14;
     --background-color: #000;
+    --watermark-shadow: #000;
     --font-family: "Press Start 2P", sans-serif;
     --second-family: "Inter", sans-serif;
+    --gradient-theme: 
+        repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(to bottom, #007f0c 0 2px, #004306 2px 4px),
+        linear-gradient(#007f0c 0.01%, #004306);
+    --normal-weight-font: 465;
+    --bold-weight-font: 785;
+    --font-slint: 0;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --accent-color: #00cc14;
         --background-color: #000;
-    
+        --watermark-shadow: #000;
+        --gradient-theme: 
+            repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
+            repeating-linear-gradient(to bottom, #007f0c 0 2px, #004306 2px 4px),
+            linear-gradient(#007f0c 0.01%, #004306);
+        --normal-weight-font: 465;
+        --bold-weight-font: 785;
+        --font-slint: 0;
     } 
 }
