@@ -14,11 +14,91 @@
 */
 
 
+.core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .core {
+  fill: var(--like-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--like-color);
+  transition: fill 0.3s linear;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--like-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--like-color);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .contour {
+  fill: var(--like-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--like-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: scale-heart 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: appearence-sparks 0.3s ease-in 0.3s;
+}
+
 @keyframes arrow-move {
-    0% {
-      inset-inline-start: -20px;
-    }
-    100% {
-      inset-inline-start: -16px;
-    }
-  } 
+  0% {
+    inset-inline-start: -20px;
+  }
+  100% {
+    inset-inline-start: -16px;
+  }
+} 
+
+@keyframes scale-heart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes appearence-sparks {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: var(--like-color);
+  }
+}
