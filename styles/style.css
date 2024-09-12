@@ -32,22 +32,24 @@
 }
 
 .header {
-  margin-block: 102px;
+  margin-block: 100px;
   border: 2px solid var(--accent-color);
   background: var(--background-color);
 }
 
-.header__title {
+.header__logo {
+  display: block;
+  text-decoration: none;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
   text-transform: uppercase;
-  margin-block-start: 136px;
+  margin-block-start: clamp(120px, 30%, 136px);
   margin-block-end: 20px;
   text-align: center;
 }
 
-.header__text {
+.header__title {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: clamp(0.875rem, 0.2179rem + 2.8037vw, 1.4375rem);
@@ -98,7 +100,7 @@
 }
 
 .theme-menu__button:hover::after {
-  width: 100%;
+  opacity: 0.6;
 }
 
 .theme-menu__button:disabled {
@@ -118,11 +120,12 @@
   outline: none;
 }
 
-.theme-menu__button:focus-visible {
+.theme-menu__button:focus-visible::after {
   outline: none;
   opacity: 0.6;
   transition: opacity 0.3s;
   transform-origin: bottom;
+  width: 100%;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -192,20 +195,16 @@
 
 .watermark {
   position: absolute;
+  top: clamp(18px, 30%, 25px);
+  right: clamp(11px, 30%, 25px);
+  opacity: 0.5;
   font-family: var(--font-family);
   font-weight: var(--normal-weight-font);
+  font-size: 14px;
   text-transform: uppercase;
+  text-shadow: 0 -1px var(--watermark-shadow), 1px 0 var(--watermark-shadow), 0 1px var(--watermark-shadow), -1px 0 var(--watermark-shadow);
   color: var(--accent-color);
-  top: 25px;
-  right: clamp(11px, 30%, 25px);
   mix-blend-mode: hard-light;
-  opacity: 0.5;
-}
-
-@supports (text-shadow: 0 -1px var(--watermark-shadow), 1px 0 var(--watermark-shadow), 0 1px var(--watermark-shadow), -1px 0 var(--watermark-shadow)) {
-  .watermark {
-    text-shadow: 0 -1px var(--watermark-shadow), 1px 0 var(--watermark-shadow), 0 1px var(--watermark-shadow), -1px 0 var(--watermark-shadow);
-  }
 }
 
 .card__content {
@@ -235,7 +234,6 @@
   cursor: pointer;
   padding: 0;
   text-align: center;
-  border: none;
   background: none;
   border: 2px solid transparent;
 }
@@ -265,6 +263,9 @@
 
 .button:focus {
   outline: none;
+}
+
+.button:focus-visible {
   box-shadow: 2px 2px var(--accent-color);
   transition: box-shadow 0.3s;
 }
@@ -280,10 +281,6 @@
   transition: width 0.5s ease-in-out;
 }
 
-.button:hover {
-  color: var(--background-color);
-}
-
 .button:hover::after {
   width: 100%;
 }
@@ -295,7 +292,8 @@
   font-size: 14px;
   line-height: 90%;
   z-index: 2;
-  color: inherit;
+  color: var(--button-text);
+  mix-blend-mode: difference;
 }
 
 .button__save {
